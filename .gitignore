@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+secure.log
+secure.log.sig
+secure.log.*.gz
+gitsecure.log
+buoi2/lab2/certs/
+buoi2/lab1/files/*.enc
+buoi2/lab1/files/*.dec
+
+
+# Lab 3 SecureChat
+*.key
+.env
+
+*.log
