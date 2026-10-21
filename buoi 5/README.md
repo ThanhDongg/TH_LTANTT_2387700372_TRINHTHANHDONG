@@ -9,9 +9,9 @@
 
 ## 1. GIỚI THIỆU TỔNG QUAN
 
-Bài thực hành số 5 cung cấp kiến thức nền tảng và kỹ năng xây dựng hai hệ thống kiểm thử bảo mật phần mềm hiện đại:
-1. **SAST (Static Application Security Testing):** Phân tích mã nguồn tĩnh không cần thực thi chương trình. Quét Abstract Syntax Tree (AST), Regular Expression pattern matching, kiểm tra chất lượng code bằng Flake8 và xuất báo cáo chuẩn công nghiệp SARIF.
-2. **DAST (Dynamic Application Security Testing):** Giám sát và phân tích hành vi ứng dụng theo thời gian thực (Runtime) khi chương trình đang chạy. Đo lường tài nguyên hệ thống (CPU, RAM, Open Files), phát hiện rò rỉ bộ nhớ, kiểm tra tràn số nguyên, theo dõi lưu lượng mạng, kiểm tra các lời gọi hệ thống độc hại và chạy lệnh cách ly trong Virtual Sandbox.
+Bài thực hành số 5 trang bị kiến thức nền tảng và kỹ năng xây dựng hai hệ thống kiểm thử bảo mật phần mềm hiện đại:
+1. **SAST (Static Application Security Testing):** Phân tích mã nguồn tĩnh không cần thực thi chương trình. Duyệt cây cú pháp trừu tượng (Abstract Syntax Tree - AST), so khớp mẫu nguy hiểm bằng biểu thức chính quy (Regex Pattern Matching), đo lường chất lượng mã nguồn bằng Flake8 và xuất báo cáo kết quả theo định dạng chuẩn quốc tế SARIF.
+2. **DAST (Dynamic Application Security Testing):** Giám sát và phân tích hành vi của ứng dụng theo thời gian thực (Runtime) khi chương trình đang chạy. Đo lường tài nguyên hệ thống (CPU, RAM, Open Files), phát hiện rò rỉ bộ nhớ, kiểm tra tràn số nguyên, theo dõi lưu lượng mạng, kiểm tra các lời gọi hệ thống độc hại và chạy lệnh cách ly trong Virtual Sandbox.
 
 ---
 
@@ -31,7 +31,7 @@ Các gói thư viện yêu cầu trong `requirements.txt`:
 - **`sast_tool/code_quality_checker.py`:** Chạy công cụ `flake8` bắt lỗi cú pháp, khoảng trắng, quy chuẩn PEP8 và trả về số dòng (`lineno`), cột (`col_offset`).
 - **`sast_tool/security_rule_engine.py`:** Nạp cấu hình từ `rules/default_rules.json`, gán mức độ nghiêm trọng (`high`, `medium`, `low`) cho từng lỗi tìm thấy.
 - **`sast_tool/sarif_reporter.py`:** Đóng gói toàn bộ kết quả phân tích theo chuẩn quốc tế **SARIF v2.1.0** (Static Analysis Results Interchange Format).
-- **`sast_tool/main.py`:** CLI thực thi quét toàn diện một tệp tin Python đầu vào.
+- **`sast_tool/main.py`:** Giao diện dòng lệnh (CLI) thực thi quét toàn diện một tệp tin Python đầu vào.
 
 ### 2.3 Kết quả kiểm thử đơn vị (Unit Tests)
 Chạy kiểm thử 6 test case trên toàn bộ các module của `sast-tool`:
@@ -63,7 +63,7 @@ python -m sast_tool.main .\examples\vulnerable_02.py
 ![SAST Scan vulnerable_02](screenshots/04_sast_scan_02.png)
 
 ### 2.5 Báo cáo định dạng chuẩn SARIF (`report.sarif`)
-File báo cáo `report.sarif` được xuất tự động, tương thích hoàn toàn với tiện ích **SARIF Viewer** trên Visual Studio Code và các hệ thống CI/CD như GitHub Advanced Security:
+File báo cáo `report.sarif` được xuất tự động, tương thích hoàn toàn với tiện ích **SARIF Viewer** trên Visual Studio Code và các hệ thống kiểm thử bảo mật tự động:
 
 ![SARIF Report Preview](screenshots/05_sarif_report_preview.png)
 
@@ -105,15 +105,3 @@ Khởi chạy dịch vụ API tại cổng 5000 và kiểm tra phản hồi từ
 - `POST /api/sandbox`: Chạy lệnh cách ly và trả về `stdout`, `stderr`.
 
 ![DAST Flask API](screenshots/08_dast_flask_api.png)
-
----
-
-## 4. KẾT LUẬN & TRẠNG THÁI KHO LƯU TRỮ GITHUB
-
-* Đã hoàn thành 100% mục tiêu của Bài thực hành 5: Xây dựng thành công bộ công cụ phân tích bảo mật tĩnh (SAST) và phân tích bảo mật động (DAST).
-* Toàn bộ mã nguồn, cấu hình và báo cáo minh chứng thực tế được tổ chức khoa học.
-* Kho lưu trữ Git được cấu hình chuẩn mực:
-  - Tác giả duy nhất: **Trịnh Thành Đông (`ThanhDongg`)**.
-  - Đã loại bỏ hoàn toàn các tài khoản không liên quan khỏi lịch sử kho lưu trữ và danh sách Contributors trên GitHub.
-
-![Git Status and Clean Author](screenshots/09_git_clean_status.png)

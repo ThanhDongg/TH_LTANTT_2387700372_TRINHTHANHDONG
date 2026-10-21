@@ -38,7 +38,7 @@ Buổi 3 gồm 2 bài thực hành:
 - **Lab 1 - SecureChat:** Xây dựng ứng dụng chat bảo mật sử dụng SSL/TLS, chứng chỉ số x509 và mã hóa tin nhắn đối xứng AES.
 - **Lab 2 - NetRecon:** Xây dựng bộ công cụ trinh sát, quét cổng mạng và phân tích lưu lượng gói tin.
 
-Xem chi tiết tại [buoi3/README.md](buoi3/README.md).
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [buoi3/README.md](buoi3/README.md).
 
 ---
 
@@ -53,6 +53,9 @@ Buổi 4 gồm 2 bài thực hành:
   - Tự động phát hiện lỗi SQL Injection (SQLi) dựa trên phản hồi lỗi và phân tích boolean.
   - Quét lỗ hổng Cross-Site Scripting (Reflected & Stored XSS).
   - Thu thập liên kết và báo cáo các điểm đầu vào (input forms / query parameters) có nguy cơ.
+
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [Buoi4/README.md](Buoi4/README.md).
+
 
 ---
 
