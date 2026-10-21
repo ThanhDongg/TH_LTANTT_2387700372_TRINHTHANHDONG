@@ -9,25 +9,23 @@ Repository lưu trữ các bài thực hành môn Lập trình An toàn Thông t
 
 ```text
 .
-├── buoi3/
+├── Buoi 3/
 │   ├── lab1/
 │   │   └── secure-chat/
-│   └── lab2/
-│       └── netrecon/
-├── Buoi4/
+│   ├── lab2/
+│   │   └── netrecon/
+│   ├── screenshots/
+│   └── README.md
+├── Buoi 4/
 │   ├── jwt-security-tools/
-│   └── web-vuln-scanner/
-└── buoi 5/
+│   ├── web-vuln-scanner/
+│   ├── screenshots/
+│   └── README.md
+└── Buoi 5/
     ├── sast-tool/
-    │   ├── examples/
-    │   ├── rules/
-    │   ├── sast_tool/
-    │   └── tests/
-    └── dast-tool/
-        ├── tests/
-        ├── app.py
-        ├── main.py
-        └── ...
+    ├── dast-tool/
+    ├── screenshots/
+    └── README.md
 ```
 
 ---
@@ -35,10 +33,10 @@ Repository lưu trữ các bài thực hành môn Lập trình An toàn Thông t
 ## Buổi 3 - Bảo Mật Mạng Máy Tính
 
 Buổi 3 gồm 2 bài thực hành:
-- **Lab 1 - SecureChat:** Xây dựng ứng dụng chat bảo mật sử dụng SSL/TLS, chứng chỉ số x509 và mã hóa tin nhắn đối xứng AES.
+- **Lab 1 - SecureChat:** Xây dựng ứng dụng chat bảo mật sử dụng SSL/TLS, chứng chỉ số x509 và mã hóa tin nhắn đối xứng AES-256-CBC.
 - **Lab 2 - NetRecon:** Xây dựng bộ công cụ trinh sát, quét cổng mạng và phân tích lưu lượng gói tin.
 
-Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [buoi3/README.md](buoi3/README.md).
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [Buoi 3/README.md](Buoi%203/README.md).
 
 ---
 
@@ -54,8 +52,7 @@ Buổi 4 gồm 2 bài thực hành:
   - Quét lỗ hổng Cross-Site Scripting (Reflected & Stored XSS).
   - Thu thập liên kết và báo cáo các điểm đầu vào (input forms / query parameters) có nguy cơ.
 
-Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [Buoi4/README.md](Buoi4/README.md).
-
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [Buoi 4/README.md](Buoi%204/README.md).
 
 ---
 
@@ -76,5 +73,4 @@ Buổi 5 gồm 2 công cụ phân tích an toàn thông tin:
   - `VirtualSandbox`: Môi trường hộp cát cách ly tạm thời (`tempfile.mkdtemp()`) thực thi lệnh an toàn không ảnh hưởng hệ thống gốc.
   - `app.py`: Cung cấp RESTful API qua Flask (`/api/monitor`, `/api/memory`, `/api/network`, `/api/security`, `/api/sandbox`).
 
-Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [buoi 5/README.md](buoi%205/README.md).
-
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [Buoi 5/README.md](Buoi%205/README.md).
