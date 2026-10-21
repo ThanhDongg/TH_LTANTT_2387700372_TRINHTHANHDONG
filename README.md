@@ -72,3 +72,6 @@ Buổi 5 gồm 2 công cụ phân tích an toàn thông tin:
   - `SecurityBehaviorChecker`: Phát hiện hành vi nghi ngờ và các cuộc gọi hệ thống nguy hiểm (`os.system`, `eval`, `exec`).
   - `VirtualSandbox`: Môi trường hộp cát cách ly tạm thời (`tempfile.mkdtemp()`) thực thi lệnh an toàn không ảnh hưởng hệ thống gốc.
   - `app.py`: Cung cấp RESTful API qua Flask (`/api/monitor`, `/api/memory`, `/api/network`, `/api/security`, `/api/sandbox`).
+
+Xem chi tiết báo cáo thực hành có hình ảnh minh chứng tại [buoi 5/README.md](buoi%205/README.md).
+
