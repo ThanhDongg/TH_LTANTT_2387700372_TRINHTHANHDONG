@@ -1,0 +1,55 @@
+# DevSecOps CI/CD Pipeline (Lab 06 - 6.2.2 & 6.1 Security Gates)
+# Sinh vien: Trinh Thanh Dong - MSSV: 2387700372
+
+stages:
+  - build
+  - security
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  image: node:20
+  script:
+    - echo "=== [STAGE 1: BUILD] Compiling Docusaurus Site ==="
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - "build/"
+    expire_in: 1 week
+
+security-job:
+  stage: security
+  image: node:20
+  script:
+    - echo "=== [STAGE 2: SECURITY GATES] Running DevSecOps Checks ==="
+    - npm run audit
+    - npm run security:secrets
+    - npm run security:sast
+  dependencies:
+    - build-job
+
+test-job:
+  stage: test
+  image: node:20
+  script:
+    - echo "=== [STAGE 3: TEST] Running Automated Unit & Health Tests ==="
+    - npm test
+  dependencies:
+    - build-job
+
+pages:
+  stage: deploy
+  image: node:20
+  script:
+    - echo "=== [STAGE 4: DEPLOY] Publishing Site via GitLab Pages ==="
+    - mv build/ public/
+  artifacts:
+    paths:
+      - "public/"
+  environment:
+    name: production
+    url: https://thanhdongg.gitlab.io/my-pipeline-tutorial-project/
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"

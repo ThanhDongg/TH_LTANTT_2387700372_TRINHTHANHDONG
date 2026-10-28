@@ -4,7 +4,7 @@
 **MSSV:** 2387700372  
 **Học phần:** Lập trình An toàn Thông tin - HUTECH  
 
-Repository lưu trữ toàn bộ các bài thực hành môn Lập trình An toàn Thông tin từ Buổi 1 đến Buổi 5. Mỗi buổi thực hành đều có mã nguồn hoàn chỉnh, kịch bản kiểm thử tự động, giao diện trực quan và báo cáo chi tiết kèm hình ảnh minh chứng thực tế từ hệ thống.
+Repository lưu trữ toàn bộ các bài thực hành môn Lập trình An toàn Thông tin từ Buổi 1 đến Buổi 6. Mỗi buổi thực hành đều có mã nguồn hoàn chỉnh, kịch bản kiểm thử tự động, giao diện trực quan và báo cáo chi tiết kèm hình ảnh minh chứng thực tế từ hệ thống.
 
 ---
 
@@ -36,11 +36,16 @@ Repository lưu trữ toàn bộ các bài thực hành môn Lập trình An to�
 │   ├── web-vuln-scanner/        # Quét lỗ hổng web tự động (SQLi, XSS, CSRF, SSRF)
 │   ├── screenshots/             # Ảnh chụp thực tế kết quả kiểm thử & giao diện
 │   └── README.md                # Báo cáo chi tiết Buổi 4
-└── Buoi 5/
-    ├── sast-tool/               # Công cụ phân tích tĩnh mã nguồn AST & chuẩn hóa SARIF
-    ├── dast-tool/               # Phân tích bảo mật động thời gian thực & Sandbox cách ly
-    ├── screenshots/             # Ảnh chụp thực tế kết quả kiểm thử & giao diện
-    └── README.md                # Báo cáo chi tiết Buổi 5
+├── Buoi 5/
+│   ├── sast-tool/               # Công cụ phân tích tĩnh mã nguồn AST & chuẩn hóa SARIF
+│   ├── dast-tool/               # Phân tích bảo mật động thời gian thực & Sandbox cách ly
+│   ├── screenshots/             # Ảnh chụp thực tế kết quả kiểm thử & giao diện
+│   └── README.md                # Báo cáo chi tiết Buổi 5
+└── Buoi 6/
+    ├── basic-pipeline/          # Thực hành 6.2.1: GitLab CI/CD Pipeline cơ bản (build, test, deploy)
+    ├── devsecops-pipeline/      # Thực hành 6.2.2: Pipeline đa tầng, chốt an ninh & GitLab Pages
+    ├── screenshots/             # Ảnh chụp thực tế kết quả kiểm thử pipeline & giao diện Pages
+    └── README.md                # Báo cáo chi tiết Buổi 6
 ```
 
 ---
@@ -84,3 +89,11 @@ Repository lưu trữ toàn bộ các bài thực hành môn Lập trình An to�
 - **Lab 1 - sast-tool (Static Analysis Security Testing):** Phân tích mã nguồn tĩnh không cần thực thi mã. Sử dụng mô hình cây cú pháp trừu tượng AST (`ASTAnalyzer`), nhận diện mẫu rủi ro (`VulnPatternMatcher`), tích hợp linter chất lượng mã nguồn `flake8`, hệ thống luật mềm dẻo từ JSON (`SecurityRuleEngine`), và xuất báo cáo chuẩn công nghiệp SARIF (`report.sarif`). Đạt **6/6 test cases passed**.
 - **Lab 2 - dast-tool (Dynamic Analysis Security Testing):** Phân tích bảo mật động thời gian thực khi ứng dụng đang chạy. Giám sát tài nguyên CPU/RAM/FD (`RuntimeMonitor`), phát hiện rò rỉ bộ nhớ & tràn số (`MemoryAnalyzer`), phân tích lưu lượng mạng (`NetworkTrafficAnalyzer`), kiểm tra hành vi nguy hiểm (`SecurityBehaviorChecker`), hộp cát cách ly (`VirtualSandbox`), và hệ thống Web REST API điều khiển. Đạt **5/5 test cases passed**.
 - *Xem chi tiết báo cáo và hình ảnh minh chứng tại:* [**Buoi 5/README.md**](Buoi%205/README.md)
+
+---
+
+### [Buổi 6: Bảo Mật Với DevSecOps & CI/CD Pipeline](Buoi%206/README.md)
+- **Phần 1 - Thiết kế Pipeline An toàn & Shift Left Security (Mục 6.1):** Kiểm soát truy cập phân quyền tối thiểu, quản lý bí mật môi trường (Secrets Management), cách ly runner bảo vệ môi trường build, và bảo mật hạ tầng dưới dạng mã (IaC).
+- **Phần 2 - Basic CI/CD Pipeline (Mục 6.2.1):** Xây dựng cấu hình `.gitlab-ci.yml` chuẩn 3 giai đoạn (`build`, `test`, `deploy`), xử lý biến môi trường định danh người dùng (`$GITLAB_USER_LOGIN`) và nhánh cam kết (`$CI_COMMIT_BRANCH`), mô phỏng tác vụ kiểm thử độ trễ cao (`sleep 20`). Đạt **3/3 Stages Passed**.
+- **Phần 3 - DevSecOps Complex Pipeline & Website Deployment (Mục 6.2.2):** Khởi tạo dự án tài liệu tĩnh Docusaurus, xây dựng pipeline đa tầng có chốt an ninh tự động (SCA quét thư viện, Secret Scanning chống rò rỉ token, SAST rà soát cú pháp nguy hiểm), đóng gói tệp trung gian `artifacts` (`build/`) và xuất bản thành công lên **GitLab Pages** (`public/`).
+- *Xem chi tiết báo cáo và hình ảnh minh chứng tại:* [**Buoi 6/README.md**](Buoi%206/README.md)
